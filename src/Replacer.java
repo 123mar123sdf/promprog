@@ -73,9 +73,20 @@ public class Replacer
     }
 
     static void Replace() {
-        Pattern p = Pattern.compile("[\\sодин|\\sдв.|\\sтри|\\sчетыр.|\\sпят.|\\sшест.|\\sсем.|\\sвосем.|\\sдевят.]");
-        Matcher m = p.matcher(allText);
-        m.find();
+        //Pattern p = Pattern.compile("[\\sодин|\\sдв.|\\sтри|\\sчетыр.|\\sпят.|\\sшест.|\\sсем.|\\sвосем.|\\sдевят.]");
+       // Matcher m = p.matcher(allText);
+        //m.find();
+        allText=allText.replaceAll("\\sодин", " 1");
+        allText=allText.replaceAll("\\sдв.", " 2");
+        allText=allText.replaceAll("\\sтри", " 3");
+        allText=allText.replaceAll("\\s[Ч|ч]етыр.", " 4");
+        allText=allText.replaceAll("\\sпят.", " 5");
+        allText=allText.replaceAll("\\sшест.", " 6");
+        allText=allText.replaceAll("\\sсем.", " 7");
+        allText=allText.replaceAll("\\sвосем.", " 8");
+        allText=allText.replaceAll("\\sдевят.", " 9");
+
+
     }
 
     static public void MakeReplacedFile(File file)	{
