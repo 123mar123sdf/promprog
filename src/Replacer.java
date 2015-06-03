@@ -86,6 +86,13 @@ public class Replacer
         allText=allText.replaceAll("\\sвосем.", " 8");
         allText=allText.replaceAll("\\sдевят.", " 9");
 
+        Pattern p = Pattern.compile("\\dнадцат..");
+        Matcher m = p.matcher(allText);
+
+        while (m.find()){
+            System.out.println(m.group().substring(0,1));
+              //  m.
+            }
 
     }
 
