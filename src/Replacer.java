@@ -1,5 +1,7 @@
 import java.io.*;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Replacer
 {
@@ -71,7 +73,9 @@ public class Replacer
     }
 
     static void Replace() {
-
+        Pattern p = Pattern.compile("[\\sодин|\\sдв.|\\sтри|\\sчетыр.|\\sпят.|\\sшест.|\\sсем.|\\sвосем.|\\sдевят.]");
+        Matcher m = p.matcher(allText);
+        m.find();
     }
 
     static public void MakeReplacedFile(File file)	{
